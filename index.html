@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            background-image: url('party.jpg');
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: rgb(53, 159, 204);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            color: #04066c;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, select, button{
+        
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 3px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            text-align: center;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #3ed5e6;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Party Registration Form</h2>
+        <form id="partyForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="adult">Are you an adult?</label>
+                <select id="adult" name="adult" required>
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="game">Which game do you want to play?</label>
+                <select id="game" name="game" required>
+                    <option value="">Select</option>
+                    <option value="chess">Chess</option>
+                    <option value="table tennis">Table Tennis</option>
+                    <option value="dart">Dart</option>
+                    <option value="carrom">Carrom</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="djTicket">Do you need a ticket to DJ?</label>
+                <select id="djTicket" name="djTicket" required>
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+           
+            <button type="button" onclick="submitForm()">Register</button>
+        </form>
+    </div>
+    <footer>
+        <p>Contact Me:</p>
+        <p>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+            <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+            <a href="mailto:tanisha.khanna2022@gmail.com">Email</a> |
+            <span>Mobile: +91 9811338052</span>
+        </p>
+    </footer>
+    <script>
+        function submitForm() {
+            const name = document.getElementById("name").value;
+            const adult = document.getElementById("adult").value;
+            const phone = document.getElementById("phone").value;
+            const game = document.getElementById("game").value;
+            const djTicket = document.getElementById("djTicket").value;
+            const email = document.getElementById("email").value;
+
+            if (name && adult && phone && game && djTicket && email) {
+                alert(`Thank you, ${name}! Your registration is successful.`);
+            } else {
+                alert("Please fill in all the required fields.");
+            }
+        }
+    </script>
+    
+</body>
+</html>
